@@ -7,10 +7,10 @@ const Post = require('./models/Post');
 const bcrypt = require('bcryptjs');
 const uploadMiddleware = multer({ dest: 'uploads/' })
 const fs = require('fs');
-
+import path from 'path';
 const salt = bcrypt.genSaltSync(10);
 const secret = 'ar33w9vnb20gniur93nbauf';
-
+const __dirname = path.resolve();
 const app = express()
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
